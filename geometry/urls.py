@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from shapes import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('new_topic/', views.new_topic, name = 'new_topic')
+    path('', views.home, name = 'home')
 ]
