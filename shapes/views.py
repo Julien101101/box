@@ -5,8 +5,8 @@ from .models import Shape
 #     return HttpResponse("Shapes index. supsup.")
 
 
-#def home(request):
-# return render(path to home template...")
+#def shapes(request):
+# return render(path to shapes template...")
 
 def index(request):
     latest_question_list = Shape.objects.order_by("-pub_date")[:5]
@@ -15,3 +15,6 @@ def index(request):
 
 
 # Leave the rest of the views (detail, results, vote) unchanged
+
+def detail(request, shape_id):
+    return HttpResponse("You're looking at question %s." % shape_id)
