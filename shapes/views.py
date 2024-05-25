@@ -1,16 +1,12 @@
 from django.http import HttpResponse
+from .models import Shape
 
-def index(request):
-    return HttpResponse("Shapes index. supsup.")
+# def index(request):
+#     return HttpResponse("Shapes index. supsup.")
 
 
 #def home(request):
 # return render(path to home template...")
-
-
-from django.http import HttpResponse
-
-from .models import Shape
 
 def index(request):
     latest_question_list = Shape.objects.order_by("-pub_date")[:5]
