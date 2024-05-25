@@ -1,4 +1,17 @@
+import datetime
+
 from django.db import models
+from django.utils import timezone
+
+
+class Shape(models.Model):
+    def __str__(self):
+        return self.shape_text
+
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
+
 
 class Topic(models.Model):
     "A topic the user is learning about."
