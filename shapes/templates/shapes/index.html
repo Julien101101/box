@@ -1,14 +1,18 @@
+<!DOCTYPE html>
 <html>
+<title>
+    RAWR
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shapes/style.css' %}">
+</title>
 <body>
     <h1>
         Shapes
     </h1>
-    {% comment %}
     <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <label \ class="form-label">Example textarea</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
-    {% endcomment %}
 
     {% if latest_question_list %}
     <ul>

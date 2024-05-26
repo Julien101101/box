@@ -1,20 +1,14 @@
-from django.http import HttpResponse
+from django.http import Http404
 from .models import Shape
-
-# def index(request):
-#     return HttpResponse("Shapes index. supsup.")
+from django.shortcuts import render
 
 
-#def shapes(request):
-# return render(path to shapes template...")
+def home(request):
+    return render(request, "shapes/index.html")
 
-def index(request):
-    latest_question_list = Shape.objects.order_by("-pub_date")[:5]
-    output = ", ".join([q.question_text for q in latest_question_list])
-    return HttpResponse(output)
+def profile(request):
+    return render(request, "profile.html")
 
 
-# Leave the rest of the views (detail, results, vote) unchanged
-
-def detail(request, shape_id):
-    return HttpResponse("You're looking at question %s." % shape_id)
+def shaooo(request):
+    return render(request, "contact.html")

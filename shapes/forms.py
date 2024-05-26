@@ -1,9 +1,11 @@
 from django import forms
 
-from .models import Topic
+from .models import Shape
 
-class TopicForm(forms.ModelForm):
+class ShapeForm(forms.ModelForm):
     class Meta:
-        model = Topic
+        model = Shape
         fields = ['text']
         labels = {'text': ''}
+
+#TODO?
